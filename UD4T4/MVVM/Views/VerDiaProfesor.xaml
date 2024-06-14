@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UD4T4.MVVM.Views.VerDiaProfesor"
+             Title=""
+             BackgroundColor="DarkGreen">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label 
+            TextColor="#fafafa"
+            x:Name="cabeceraDia"
+            Text="Fecha "
+            FontSize="Medium"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <ListView x:Name="actividadesListView" ItemsSource="{Binding Actividades}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <VerticalStackLayout Padding="20">
+                                <Label Text="{Binding ActividadDesarrollada}" TextColor="#fafafa"/>
+                                <Label Text="{Binding Observaciones, StringFormat='Descripcion: {0}'}" TextColor="#fafafa"/>
+                                <Label Text="{Binding TiempoEmpleado, StringFormat='Tiempo: {0} horas'}" TextColor="#fafafa"/>
+                                
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

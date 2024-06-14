@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UD4T4.MVVM.Views.SeleccionAlumno"
+             Title=""
+             BackgroundColor="DarkGreen">
+    <VerticalStackLayout Spacing="20" Padding="20" VerticalOptions="StartAndExpand">
+        <Label 
+            Text="Listado de Alumnos" TextColor="#fafafa"
+            FontSize="Medium"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <ListView x:Name="alumnosListView" ItemsSource="{Binding AlumnosCollection}" ItemTapped="OnAlumnoTapped" SeparatorColor="#CCCCCC">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <ViewCell>
+                        <VerticalStackLayout Padding="20" VerticalOptions="CenterAndExpand" HeightRequest="100">
+                            <HorizontalStackLayout VerticalOptions="Center">
+                                <VerticalStackLayout VerticalOptions="Center" Padding="20" Spacing="10">
+                                    <Label Text="{Binding UserName, StringFormat='Usuario: {0}'}" TextColor="#fafafa"/>
+                                    <HorizontalStackLayout>
+                                        <Label Text="{Binding Nombre, StringFormat='Nombre: {0}'}" TextColor="#fafafa"/>
+                                        <Label Padding="10, 0, 0, 0" Text="{Binding Apellidos, StringFormat='Apellidos: {0}'}" TextColor="#fafafa"/>
+                                        <Label Padding="20, 0, 0, 0" Text="{Binding CentroEstudio, StringFormat='Centro: {0}'}" TextColor="#fafafa"/>
+                                        <Label Padding="20, 0, 0, 0" Text="{Binding NombreGrado, StringFormat='Grado: {0}'}" TextColor="#fafafa"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                                <Image Source="{Binding FotoUrl}" HeightRequest="75"/>
+                            </HorizontalStackLayout>
+
+
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </VerticalStackLayout>
+</ContentPage>

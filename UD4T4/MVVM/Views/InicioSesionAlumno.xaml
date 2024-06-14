@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UD4T4.MVVM.Views.InicioSesionAlumno"
+             Title=""
+             BackgroundColor="SteelBlue">
+    
+    <VerticalStackLayout Padding="50"
+                         Spacing="20">
+        <Label Text="Aplicacion Practicas en Centros de Trabajo"
+               FontSize="Medium"
+               TextColor="#fafafa"
+               Padding="0, 20"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand" />
+        
+
+        <VerticalStackLayout Spacing="20"
+                             Margin="0, 0, 0, 20">
+            
+            <Label Text="Iniciar sesion"
+               FontSize="Small"
+               TextColor="#fafafa"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="StartAndExpand" />
+
+            <Entry x:Name="correoEntry" 
+               Placeholder="Correo"     
+               TextColor="#fafafa"
+               Text="{Binding UserItem.Email}" 
+               PlaceholderColor="#999999"/>
+
+            <Entry x:Name="passwordEntry" 
+               Placeholder="Contraseña" 
+               IsPassword="True" 
+               TextColor="#fafafa"
+               PlaceholderColor="#999999"
+               Text="{Binding UserItem.Password}" />
+
+        </VerticalStackLayout>
+
+        <Button Text="Iniciar Sesion" Clicked="OnLoginClicked" HorizontalOptions="Center" BackgroundColor="#999999" TextColor="#fafafa"/>
+        <Button Text="Registrarse" BackgroundColor="#999999" TextColor="#fafafa" Clicked="OnRegisterClicked" HorizontalOptions="Center"/>
+
+        <HorizontalStackLayout Spacing="40" HorizontalOptions="CenterAndExpand">
+            <Label Text="Sesion Alumno" TextColor="#fafafa" x:Name="lblModo"
+                   FontSize="Small"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="CenterAndExpand">
+            <Button Text="Cambiar Sesion" Clicked="OnModeButtonClicked" BackgroundColor="#999999" TextColor="#fafafa" HorizontalOptions="CenterAndExpand"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

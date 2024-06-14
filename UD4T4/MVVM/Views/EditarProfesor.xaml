@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UD4T4.MVVM.Views.EditarProfesor"
+             Title=""
+             BackgroundColor="DarkGreen">
+    <ScrollView>
+        <VerticalStackLayout Padding="30"
+                         Spacing="20">
+
+            <Label Text="Editar Perfil"
+               FontSize="Large"
+               TextColor="#fafafa"
+               VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+
+            <Label Text="DNI : " TextColor="#fafafa"/>
+            <Entry x:Name="dniEntry" PlaceholderColor="#999999" TextColor="#fafafa"
+            Placeholder="DNI"               
+            Text="{Binding Persona.DNI}" />
+
+            <Label Text="Nombre : "
+                   TextColor="#fafafa"/>
+            <Entry x:Name="nombreEntry"
+                   TextColor="#fafafa"
+                   Placeholder="Nombre"  
+               PlaceholderColor="#999999"
+             Text="{Binding Persona.Nombre}" />
+
+            <Label Text="Apellidos :"
+                   TextColor="#fafafa"/>
+            <Entry x:Name="apellidosEntry"
+               PlaceholderColor="#999999"
+                   TextColor="#fafafa"
+            Placeholder="Apellidos"               
+            Text="{Binding Persona.Apellidos}" />
+
+            <Label Text="Centro : " TextColor="#fafafa"/>
+            <Entry x:Name="centroEntry"
+               PlaceholderColor="#999999"
+                   TextColor="#fafafa"
+            Placeholder="Centro donde se cursa el Grado Ejem: I.E.S Saladillo"               
+            Text="{Binding Persona.CentroEstudio}" />
+
+            <Button BackgroundColor="#999999" TextColor="#fafafa" Text="Actualizar Cambios" Clicked="OnActualizarClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

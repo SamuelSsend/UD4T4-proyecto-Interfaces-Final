@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UD4T4.MVVM.Views.SesionIniciadaAlumno"
+             Title=""
+             BackgroundColor="SteelBlue">
+    <VerticalStackLayout Spacing="30"
+                         VerticalOptions="FillAndExpand">
+        <Label TextColor="#fafafa" 
+               FontSize="Medium"
+               Padding="60"
+            x:Name="labelCabecera"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand" />
+
+        <Image x:Name="fotoURL" HeightRequest="200" HorizontalOptions="CenterAndExpand" BackgroundColor="SteelBlue"/>
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="20">
+            <Button Text="Añadir/Editar Tareas" Clicked="OnDiasClicked" HorizontalOptions="Center" BackgroundColor="#999999" TextColor="#f3f9fa" Margin="0, 0"/>
+            <Button Text="Editar información de Usuario" Clicked="OnGestionarClicked" HorizontalOptions="Center" BackgroundColor="#999999" TextColor="#f3f9fa" Margin="0, 0"/>
+        </HorizontalStackLayout>
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

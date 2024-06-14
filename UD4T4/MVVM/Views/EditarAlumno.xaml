@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UD4T4.MVVM.Views.EditarAlumno"
+             Title=""
+             BackgroundColor="SteelBlue">
+    <ScrollView>
+        <VerticalStackLayout Padding="30"
+                         Spacing="20">
+
+            <Label Text="Editar Usuario"
+               FontSize="Large"
+               TextColor="#fafafa"
+               VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="DNI : " TextColor="#fafafa"/>
+            <Entry x:Name="dniEntry" PlaceholderColor="#999999" TextColor="#fafafa"
+            Placeholder="DNI"               
+            Text="{Binding Persona.DNI}" />
+
+            <Label Text="Nombre : "
+                   TextColor="#fafafa"/>
+            <Entry x:Name="nombreEntry"
+                   TextColor="#fafafa"
+                   Placeholder="Nombre"  
+               PlaceholderColor="#999999"
+             Text="{Binding Persona.Nombre}" />
+
+            <Label Text="Apellidos :"
+                   TextColor="#fafafa"/>
+            <Entry x:Name="apellidosEntry"
+               PlaceholderColor="#999999"
+                   TextColor="#fafafa"
+            Placeholder="Apellidos"               
+            Text="{Binding Persona.Apellidos}" />
+
+            <Label Text="Imagen de Usuario" TextColor="#fafafa" HorizontalOptions="CenterAndExpand"/>
+            <Image x:Name="fotoURL" HeightRequest="200" HorizontalOptions="CenterAndExpand" BackgroundColor="#006876"/>
+            <Button Text="Subir Imagen"
+                     x:Name="subirImagen"
+                    HorizontalOptions="CenterAndExpand"
+                     TextColor="#fafafa"
+                     BackgroundColor="#999999"
+                     Clicked="OnSubirImagenClicked"/>
+            
+            <Label Text="Centro : " TextColor="#fafafa"/>
+            <Entry x:Name="centroEntry"
+               PlaceholderColor="#999999"
+                   TextColor="#fafafa"
+            Placeholder="Centro donde se cursa el Grado Ejem: I.E.S Saladillo"               
+            Text="{Binding Persona.CentroEstudio}" />
+
+            <Label Text="Nombre del grado cursado :" TextColor="#fafafa"/>
+            <Entry x:Name="gradoEntry" PlaceholderColor="#999999" TextColor="#fafafa"
+            Placeholder="Desarrollo de Aplicaciones Multiplataformas." 
+            Text="{Binding Persona.NombreGrado}" />
+
+            <Label Text="Tutor laboral :" TextColor="#fafafa"/>
+
+            <Entry x:Name="tutorEntry" PlaceholderColor="#999999" TextColor="#fafafa"
+             Placeholder="Sabtaigo Achas" 
+             Text="{Binding Persona.TutorLaboral}" />
+            
+            <Label Text="Tutor del centro educativo (Introducir su Usuario) :"/>
+
+            <Entry x:Name="profesorEntry" PlaceholderColor="#999999" TextColor="#fafafa"
+             Placeholder="Paco" 
+             Text="{Binding Persona.ProfesorTutor}" />
+
+            <Label Text="Centro de trabajo :" TextColor="#fafafa"/>
+
+            <Entry x:Name="centroTrabajoEntry" PlaceholderColor="#999999" TextColor="#fafafa"
+             Placeholder="Inserte el nombre de la empresa." 
+             Text="{Binding Persona.CentroTrabajo}" />
+
+            <Button BackgroundColor="#999999" TextColor="#fafafa" Text="Actualizar Cambios" Clicked="OnActualizarClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UD4T4.MVVM.Views.SeleccionDias"
+             Title=""
+             BackgroundColor="SteelBlue">
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand"
+          Spacing="20"
+          Padding="20">
+
+            <Label Grid.Row="0" Text="Fecha del Trabajo Realizado" TextColor="#fafafa" HorizontalTextAlignment="Center" FontSize="20"/>
+            <DatePicker Grid.Row="1" x:Name="miDatePicker" DateSelected="OnDateSelected" Date="{Binding Dia.Fecha}" TextColor="#fafafa" HorizontalOptions="CenterAndExpand"/>
+
+            <Label Text="Trabajo Realizado:" TextColor="#fafafa"/>
+            <Editor x:Name="actividadEntry" Placeholder="Actividad desarrollada" Text="{Binding ActividadActual.ActividadDesarrollada}" TextColor="#fafafa" PlaceholderColor="#999999"/>
+
+            <Label Text="Descripcion:" TextColor="#fafafa"/>
+            <Editor x:Name="descripcionEditor" Placeholder="Añada descripcion de la tarea realizada" Text="{Binding ActividadActual.Observaciones}" TextColor="#fafafa" PlaceholderColor="#999999"/>
+
+            <Label Text="Tiempo de trabajo:" TextColor="#fafafa"/>
+            <Entry x:Name="tiempoEntry" Placeholder="Ingrese la cantidad de horas" Text="{Binding ActividadActual.TiempoEmpleado}" TextColor="#fafafa" PlaceholderColor="#999999" Keyboard="Numeric"/>
+
+
+            <HorizontalStackLayout Spacing="20" >
+                <Button x:Name="AñadirEditarBotton" BackgroundColor="#999999" TextColor="#fafafa" Text="Añadir/Editar" Clicked="OnAgregarClicked" HorizontalOptions="CenterAndExpand" VerticalOptions="End" Margin="0, 0"/>
+                <Button x:Name="EliminarBoton" BackgroundColor="#999999" TextColor="#fafafa" Text="Eliminar" Clicked="OnBorrarClicked" HorizontalOptions="CenterAndExpand" VerticalOptions="End" Margin="0, 0"/>
+            </HorizontalStackLayout>
+
+            <Label Text="Trabajos Registrados" TextColor="#fafafa" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+
+            <ListView x:Name="actividadesListView" ItemsSource="{Binding Actividades}" ItemTapped="OnActividadTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <VerticalStackLayout>
+                                <Label Text="{Binding ActividadDesarrollada}" TextColor="#fafafa"/>
+                                <Label Text="{Binding TiempoEmpleado, StringFormat='Tiempo: {0} horas'} " TextColor="#fafafa"/>
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

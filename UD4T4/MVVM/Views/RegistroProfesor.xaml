@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UD4T4.MVVM.Views.RegistroProfesor"
+             Title=""
+             BackgroundColor="DarkGreen">
+    <ScrollView>
+        <VerticalStackLayout Padding="30"
+                             Spacing="20">
+
+            <Label Text="Registro Profesor" TextColor="#fafafa" 
+                   FontSize="Large"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand" />
+
+            <Entry x:Name="usernameEntry" TextColor="#fafafa" PlaceholderColor="#999999"
+       Placeholder="Usuario"               
+       Text="{Binding UserItem.UserName}" />
+
+            <Entry x:Name="emailEntry" TextColor="#fafafa" PlaceholderColor="#999999"
+       Placeholder="Email"               
+       Text="{Binding UserItem.Email}" />
+
+            <Entry x:Name="passwordEntry" TextColor="#fafafa" PlaceholderColor="#999999"
+       Placeholder="Contraseña" 
+       IsPassword="True" 
+       Text="{Binding UserItem.Password}" />
+
+
+            <Label Text="DNI : " TextColor="#fafafa"/>
+            <Entry x:Name="dniEntry" PlaceholderColor="#999999" Placeholder="DNI" Text="{Binding Persona.DNI}" TextColor="#fafafa"/>
+
+            <Label Text="Nombre : " TextColor="#fafafa"/>
+            <Entry x:Name="nombreEntry"  TextColor="#fafafa" Placeholder="Nombre" PlaceholderColor="#999999"
+       Text="{Binding Persona.Nombre}" />
+
+            <Label Text="Apellidos : " TextColor="#fafafa"/>
+            <Entry x:Name="apellidosEntry" TextColor="#fafafa" PlaceholderColor="#999999"
+       Placeholder="Apellidos"               
+       Text="{Binding Persona.Apellidos}" />
+
+            <Label Text="Centro :" TextColor="#fafafa"/>
+            <Entry x:Name="centroEntry"
+               PlaceholderColor="#999999"
+                   TextColor="#fafafa"
+            Placeholder="Centro Ejem: I.E.S Saladillo"               
+            Text="{Binding Persona.CentroEstudio}" />
+            
+
+            <Button Text="Registrarse" BackgroundColor="#999999" TextColor="#fafafa" Clicked="OnRegisterClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
